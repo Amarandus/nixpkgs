@@ -202,10 +202,11 @@ in {
         RestrictRealtime = true;
         RestrictSUIDSGID = true;
         SystemCallArchitectures = "native";
-        UMask = "0077";
+        UMask = "0027";
       };
 
       preStart = ''
+        chmod 0750 .
         ln -sf ${eulaFile} eula.txt
       '' + (if cfg.declarative then ''
 
