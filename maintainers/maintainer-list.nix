@@ -2651,7 +2651,7 @@
     name = "Matías Lang";
   };
   CRTified = {
-    email = "carl.schneider+nixos@rub.de";
+    email = "dev.github@crtified.me";
     matrix = "@schnecfk:ruhr-uni-bochum.de";
     github = "CRTified";
     githubId = 2440581;
