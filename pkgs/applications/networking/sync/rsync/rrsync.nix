@@ -1,10 +1,13 @@
-{ lib, stdenv, fetchurl, perl, rsync, fetchpatch }:
+{ lib, stdenv, fetchurl, python3, rsync, fetchpatch }:
 
 stdenv.mkDerivation {
   pname = "rrsync";
   inherit (rsync) version srcs;
 
-  buildInputs = [ rsync perl ];
+  buildInputs = [
+    rsync
+    (python3.withPackages (pythonPackages: with pythonPackages; [ braceexpand ]))
+  ];
 
   # Skip configure and build phases.
   # We just want something from the support directory
