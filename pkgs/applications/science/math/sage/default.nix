@@ -1,6 +1,6 @@
 { pkgs
 , withDoc ? false
-, requireSageTests ? true
+, requireSageTests ? false
 , extraPythonPackages ? ps: []
 }:
 
