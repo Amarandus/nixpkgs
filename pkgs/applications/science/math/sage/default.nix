@@ -29,6 +29,8 @@ let
       sage-setup = self.callPackage ./python-modules/sage-setup.nix {
         inherit sage-src;
       };
+      fpylll = super.fpylll.overrideAttrs
+        (o: { patches = (o.patches or [ ]) ++ [ ./patches/fpylll-239.patch ]; });
     };
   };
 
