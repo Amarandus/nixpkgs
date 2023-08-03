@@ -188,6 +188,11 @@ in mkLicense lset) ({
     fullName = "BSD 3-Clause Clear License";
   };
 
+  bsd3LBNL = {
+    spdxId = "BSD-3-Clause-LBNL";
+    fullName = "Lawrence Berkeley National Labs BSD variant license";
+  };
+
   bsdOriginal = {
     spdxId = "BSD-4-Clause";
     fullName = ''BSD 4-clause "Original" or "Old" License'';
