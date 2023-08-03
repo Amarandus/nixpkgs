@@ -6,6 +6,7 @@
 , mpfi
 , libxml2
 , fplll
+, withQD ? true, qd
 }:
 
 stdenv.mkDerivation rec {
@@ -17,7 +18,8 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-WNc0+aL8jmczwR+W0t+aslvvJNccQBIw4p8KEzmoEZI=";
   };
 
-  buildInputs = [ gmp mpfr mpfi libxml2 fplll ];
+  buildInputs = [ gmp mpfr mpfi libxml2 fplll ]
+  ++ lib.optionals withQD [qd];
 
   doCheck = true;
 

@@ -5,6 +5,7 @@
 , autoreconfHook
 , gmp
 , mpfr
+, withQD ? true, qd
 }:
 
 stdenv.mkDerivation rec {
@@ -27,7 +28,8 @@ stdenv.mkDerivation rec {
   buildInputs = [
     gmp
     mpfr
-  ];
+  ]
+  ++ lib.optionals withQD [qd];
 
   meta = with lib; {
     description = "Lattice algorithms using floating-point arithmetic";

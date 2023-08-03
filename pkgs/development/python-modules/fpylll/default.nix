@@ -11,6 +11,7 @@
 , cysignals
 , numpy
 , pytest
+, withQD ? true, qd
 }:
 
 buildPythonPackage rec {
@@ -29,7 +30,10 @@ buildPythonPackage rec {
     pari
     mpfr
     fplll
-  ];
+  ]
+  ++ lib.optionals withQD [qd];
+
+  HAVE_QD = withQD;
 
   propagatedBuildInputs = [
     cython
